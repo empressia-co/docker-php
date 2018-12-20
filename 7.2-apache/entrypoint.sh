@@ -2,6 +2,7 @@
 
 if [[ ! -z ${XDEBUG_ENABLED} ]] && [[ ${#XDEBUG_ENABLED} -gt 0 ]] && [[ ${XDEBUG_ENABLED} != "false" ]] && [[ ${XDEBUG_ENABLED} != "0" ]]; then
   ln -sf /usr/local/etc/php/conf-available/xdebug.ini /usr/local/etc/php/conf.d/20-xdebug.ini
+  docker-php-ext-enable xdebug
 else
   if [[ $(find /usr/local/etc/php/conf.d | grep -c "xdebug.ini") -gt 0 ]]; then
     rm /usr/local/etc/php/conf.d/*-xdebug.ini

@@ -13,7 +13,7 @@ RUN a2enmod rewrite \
     && usermod -u 1000 www-data \
     && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
     && docker-php-ext-install xml mbstring pdo_mysql gd zip mysqli exif \
-    && pecl install xdebug && docker-php-ext-enable xdebug
+    && pecl install xdebug
 
 ENTRYPOINT ["/entrypoint.sh"]
 
