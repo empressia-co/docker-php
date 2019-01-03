@@ -5,6 +5,7 @@ ENV XDEBUG_ENABLED 0
 ENV APACHE_DOCUMENT_ROOT /var/www/html
 
 COPY entrypoint.sh /entrypoint.sh
+COPY errors.ini /usr/local/etc/php/conf.d/errors.ini
 COPY xdebug.ini /usr/local/etc/php/conf-available/xdebug.ini
 
 RUN a2enmod rewrite \
