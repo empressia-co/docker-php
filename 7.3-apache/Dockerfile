@@ -18,6 +18,4 @@ RUN a2enmod rewrite \
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-VOLUME /var/www/html
-
 CMD ["apache2-foreground"]
