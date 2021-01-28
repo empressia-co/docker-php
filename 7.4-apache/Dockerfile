@@ -10,7 +10,7 @@ COPY xdebug.ini /usr/local/etc/php/conf-available/xdebug.ini
 
 RUN a2enmod rewrite \
     && apt-get update \
-    && apt-get install -y --no-install-recommends curl git libxml2-dev zlib1g-dev libicu-dev g++ libpng-dev libjpeg-dev libzip-dev oniguruma \
+    && apt-get install -y --no-install-recommends curl git libxml2-dev zlib1g-dev libicu-dev g++ libpng-dev libjpeg-dev libzip-dev libonig-dev \
     && usermod -u 1000 www-data \
     && docker-php-ext-configure gd --with-jpeg \
     && docker-php-ext-install xml mbstring pdo_mysql gd mysqli exif zip \
